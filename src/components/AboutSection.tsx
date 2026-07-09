@@ -28,16 +28,17 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 relative"
           >
+            <div className="absolute -top-20 -left-20 w-64 h-64 bg-[var(--gold)]/5 rounded-full blur-3xl -z-10"></div>
             <h2 
-              className="text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight mb-4"
+              className="text-5xl md:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-br from-white via-white/90 to-white/60 font-bold leading-tight mb-4 drop-shadow-lg"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               A Howrah-based web agency for the hospitality world.
             </h2>
             
-            <div className="flex flex-col gap-6 text-[#888888] text-base md:text-lg font-light leading-relaxed">
+            <div className="flex flex-col gap-6 text-white/70 text-lg md:text-xl font-light leading-relaxed glass border-glass-border p-8 rounded-2xl">
               <p>
                 We are Ornen Creature &mdash; a freelancing agency founded by Sudip Seth and Pritam Shyam Chowdhury in Howrah, West Bengal.
               </p>
@@ -50,10 +51,10 @@ export default function AboutSection() {
             </div>
 
             <div className="flex flex-wrap items-center gap-4 mt-6">
-              <span className="px-5 py-2 rounded-full border border-[var(--gold)]/50 text-[var(--gold)] text-xs tracking-[0.15em] uppercase">
+              <span className="px-5 py-2 rounded-full glass border border-glass-border text-[var(--gold)] text-xs tracking-[0.15em] uppercase hover:bg-glass-hover transition-colors">
                 Howrah, West Bengal
               </span>
-              <span className="px-5 py-2 rounded-full border border-[var(--gold)]/50 text-[var(--gold)] text-xs tracking-[0.15em] uppercase">
+              <span className="px-5 py-2 rounded-full glass border border-glass-border text-[var(--gold)] text-xs tracking-[0.15em] uppercase hover:bg-glass-hover transition-colors">
                 Est. 2024
               </span>
             </div>

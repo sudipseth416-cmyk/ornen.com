@@ -51,26 +51,26 @@ export function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-20 pt-12 border-t border-[#c9a84c]/20 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 text-left md:text-center text-gray-300"
+          className="mt-20 pt-12 border-t border-[var(--gold)]/20 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 text-left md:text-center text-gray-300"
         >
-          <div className="flex flex-col gap-2 items-start md:items-center">
-            <span className="text-[#c9a84c] text-2xl mb-2">📍</span>
-            <p className="leading-relaxed">Howrah, Jagadishpur,<br />West Bengal, India</p>
+          <div className="glass border-glass-border p-8 rounded-2xl flex flex-col gap-4 items-start md:items-center hover:bg-glass-hover transition-colors duration-300">
+            <span className="text-3xl mb-2 filter drop-shadow-[0_0_8px_rgba(201,168,76,0.5)]">📍</span>
+            <p className="leading-relaxed font-light text-white/80">Howrah, Jagadishpur,<br />West Bengal, India</p>
           </div>
           
-          <div className="flex flex-col gap-2 items-start md:items-center">
-            <span className="text-[#c9a84c] text-2xl mb-2">📞</span>
-            <p className="leading-relaxed">+91 74397 57068<br />+91 91630 09325</p>
+          <div className="glass border-glass-border p-8 rounded-2xl flex flex-col gap-4 items-start md:items-center hover:bg-glass-hover transition-colors duration-300">
+            <span className="text-3xl mb-2 filter drop-shadow-[0_0_8px_rgba(201,168,76,0.5)]">📞</span>
+            <p className="leading-relaxed font-light text-white/80">+91 74397 57068<br />+91 91630 09325</p>
           </div>
           
-          <div className="flex flex-col gap-2 items-start md:items-center">
-            <span className="text-[#c9a84c] text-2xl mb-2">💬</span>
-            <p className="leading-relaxed">WhatsApp:<br />+91 93300 19587 / +91 91630 09325</p>
+          <div className="glass border-glass-border p-8 rounded-2xl flex flex-col gap-4 items-start md:items-center hover:bg-glass-hover transition-colors duration-300">
+            <span className="text-3xl mb-2 filter drop-shadow-[0_0_8px_rgba(201,168,76,0.5)]">💬</span>
+            <p className="leading-relaxed font-light text-white/80">WhatsApp:<br />+91 93300 19587 / +91 91630 09325</p>
           </div>
           
-          <div className="flex flex-col gap-2 items-start md:items-center">
-            <span className="text-[#c9a84c] text-2xl mb-2">📸</span>
-            <p className="leading-relaxed">Instagram:<br />@ornen_creature</p>
+          <div className="glass border-glass-border p-8 rounded-2xl flex flex-col gap-4 items-start md:items-center hover:bg-glass-hover transition-colors duration-300">
+            <span className="text-3xl mb-2 filter drop-shadow-[0_0_8px_rgba(201,168,76,0.5)]">📸</span>
+            <p className="leading-relaxed font-light text-white/80">Instagram:<br />@ornen_creature</p>
           </div>
         </motion.div>
       </div>

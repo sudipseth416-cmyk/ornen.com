@@ -42,34 +42,42 @@ export default function StatsBar() {
   ];
 
   return (
-    <section className="w-full bg-[#111111] border-y border-[#1a1a1a]">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4">
+    <section className="py-16 glass bg-animated-gradient border-y border-glass-border relative overflow-hidden bg-[#111111]">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
           {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className={`
-                flex flex-col items-center justify-center py-12 md:py-16
-                ${index % 2 === 1 ? 'border-l border-[var(--gold)]/30' : ''} 
-                ${index > 1 ? 'border-t border-[var(--gold)]/30 md:border-t-0' : ''}
-                ${index > 0 ? 'md:border-l border-[var(--gold)]/30' : ''}
-              `}
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, type: "spring", stiffness: 200, damping: 20 }}
+              className={`text-center relative ${
+                index !== 0 ? 'md:before:content-[""] md:before:absolute md:before:left-0 md:before:top-1/4 md:before:bottom-1/4 md:before:w-px md:before:bg-gradient-to-b md:before:from-transparent md:before:via-[var(--gold)]/40 md:before:to-transparent' : ''
+              } ${
+                index === 2 || index === 3 ? 'before:content-[""] before:absolute before:top-0 before:left-1/4 before:right-1/4 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[var(--gold)]/40 before:to-transparent md:before:hidden' : ''
+              } ${
+                index === 1 ? 'before:content-[""] before:absolute before:left-0 before:top-1/4 before:bottom-1/4 before:w-px before:bg-gradient-to-b before:from-transparent before:via-[var(--gold)]/40 before:to-transparent md:before:hidden' : ''
+              } ${
+                index === 3 ? 'before:content-[""] before:absolute before:left-0 before:top-1/4 before:bottom-1/4 before:w-px before:bg-gradient-to-b before:from-transparent before:via-[var(--gold)]/40 before:to-transparent md:before:hidden' : ''
+              }`}
             >
-              <div 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--gold)] mb-3 tracking-tight"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                <CountUpStat 
-                  value={stat.num} 
-                  prefix={stat.prefix} 
-                  suffix={stat.suffix} 
-                  formatComma={stat.formatComma} 
-                />
+              <div className="relative inline-block mb-2">
+                <div className="absolute inset-0 animate-pulse rounded-full blur-xl bg-[var(--gold)]/20"></div>
+                <div 
+                  className="text-4xl md:text-5xl font-bold text-[var(--gold)] relative z-10"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  <CountUpStat 
+                    value={stat.num} 
+                    prefix={stat.prefix} 
+                    suffix={stat.suffix} 
+                    formatComma={stat.formatComma} 
+                  />
+                </div>
               </div>
-              <div className="text-white text-xs md:text-sm uppercase tracking-[0.2em] opacity-80 text-center font-medium">
-                {stat.label}
-              </div>
-            </div>
+              <div className="text-sm text-white/70 tracking-widest uppercase font-medium mt-1">{stat.label}</div>
+            </motion.div>
           ))}
         </div>
       </div>

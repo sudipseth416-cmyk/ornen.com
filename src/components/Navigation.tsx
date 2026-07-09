@@ -3,18 +3,23 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { name: 'About', href: '#about' },
-  { name: 'Work', href: '#work' },
-  { name: 'Services', href: '#services' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'Contact', href: '#contact' },
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#work', label: 'Work' },
+  { href: '#services', label: 'Services' },
+  { href: '#process', label: 'Process' },
+  { href: '#pricing', label: 'Pricing' },
+  { href: '#testimonials', label: 'Testimonials' },
+  { href: '#contact', label: 'Contact' },
 ];
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +32,6 @@ export default function Navigation() {
 
   const closeMenu = () => setIsMobileMenuOpen(false);
 
-  // Prevent scrolling when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -37,17 +41,14 @@ export default function Navigation() {
   }, [isMobileMenuOpen]);
 
   return (
-    <motion.header
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-[#0a0a0a] border-b border-[var(--gold)]/50 py-4'
-          : 'bg-transparent py-6 border-b border-transparent'
+          ? 'py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]'
+          : 'py-5 bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between relative z-50">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link 
           href="/"
@@ -59,17 +60,34 @@ export default function Navigation() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-white/80 hover:text-[var(--gold)] transition-colors text-sm uppercase tracking-[0.2em]"
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link, index) => (
+            <div
+              key={link.href}
+              className="relative"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
-              {link.name}
-            </Link>
+              <a
+                href={link.href}
+                className={`text-sm tracking-wide transition-colors duration-300 relative z-10 ${
+                  hoveredIndex === index ? 'text-[var(--gold)]' : 'text-white/80'
+                }`}
+              >
+                {link.label}
+              </a>
+              {hoveredIndex === index && (
+                <motion.div
+                  layoutId="nav-underline"
+                  className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[var(--gold)]"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                />
+              )}
+            </div>
           ))}
-        </nav>
+        </div>
 
         {/* Mobile Menu Toggle */}
         <button
@@ -85,33 +103,37 @@ export default function Navigation() {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-[#0a0a0a] z-40 flex flex-col items-center justify-center min-h-screen"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="md:hidden fixed inset-y-0 right-0 w-64 bg-[#0a0a0a]/95 backdrop-blur-xl border-l border-white/10 shadow-2xl z-50"
           >
-            <nav className="flex flex-col items-center gap-8">
+            <div className="flex flex-col h-full pt-20 px-6 pb-6 gap-6">
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="absolute top-6 right-6 text-white"
+                aria-label="Close menu"
+              >
+                <X size={24} />
+              </button>
               {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 + 0.1 }}
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 + i * 0.05 }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-white/70 hover:text-[var(--gold)] transition-colors py-3 min-h-[44px] border-b border-white/10 text-lg flex items-center relative group"
                 >
-                  <Link
-                    href={link.href}
-                    onClick={closeMenu}
-                    className="text-white text-4xl font-light hover:text-[var(--gold)] transition-colors"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    {link.name}
-                  </Link>
-                </motion.div>
+                  <span className="w-0 group-hover:w-1 h-full bg-[var(--gold)] absolute left-0 transition-all duration-300 mr-2 -ml-2" />
+                  <span className="group-hover:ml-3 transition-all duration-300">{link.label}</span>
+                </motion.a>
               ))}
             </nav>
           </motion.div>

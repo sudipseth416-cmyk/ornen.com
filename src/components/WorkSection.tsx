@@ -80,13 +80,15 @@ export default function WorkSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="w-full bg-[#111111] p-8 md:p-12 lg:p-16 rounded-xl border border-transparent border-b-2 hover:border-b-[var(--gold)] transition-all duration-500 group flex flex-col lg:flex-row gap-8 lg:gap-16 items-start"
+              className="w-full relative glass p-8 md:p-12 lg:p-16 rounded-2xl border border-glass-border hover:border-[var(--gold)]/30 transition-all duration-500 group flex flex-col lg:flex-row gap-8 lg:gap-16 items-start overflow-hidden"
             >
-              
+              {/* Highlight Background Glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--gold)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
+
               {/* Large Muted Number */}
-              <div className="hidden lg:block flex-none">
+              <div className="hidden lg:block flex-none relative z-10">
                 <span 
-                  className="text-8xl xl:text-9xl font-bold text-[#1a1a1a] leading-none select-none transition-colors duration-500 group-hover:text-[#222222]"
+                  className="text-8xl xl:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-white/10 to-transparent leading-none select-none transition-all duration-500 group-hover:from-[var(--gold)]/20 group-hover:to-transparent drop-shadow-md"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   {project.number}
@@ -94,50 +96,51 @@ export default function WorkSection() {
               </div>
 
               {/* Card Content */}
-              <div className="flex-1 flex flex-col w-full">
+              <div className="flex-1 flex flex-col w-full relative z-10">
                 
                 {/* Header (Mobile Number, Category, Live Badge) */}
                 <div className="flex flex-wrap items-center gap-4 mb-6">
                   <span 
-                    className="lg:hidden text-5xl font-bold text-[#222222] mr-2"
+                    className="lg:hidden text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-white/20 to-transparent mr-2"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
                     {project.number}
                   </span>
-                  <span className="text-[var(--gold)] text-xs md:text-sm uppercase tracking-[0.2em] font-medium">
+                  <span className="text-[var(--gold)] text-xs md:text-sm uppercase tracking-[0.2em] font-medium drop-shadow-[0_0_8px_rgba(201,168,76,0.5)]">
                     {project.category}
                   </span>
-                  <div className="flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    <span className="text-green-500 text-[10px] font-bold tracking-widest uppercase">Live</span>
+                  <div className="flex items-center gap-2 px-4 py-1.5 glass border border-green-500/30 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.1)]">
+                    <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_5px_rgba(34,197,94,0.8)] animate-pulse"></span>
+                    <span className="text-green-400 text-[10px] font-bold tracking-widest uppercase">Live</span>
                   </div>
                 </div>
                 
                 {/* Video Preview */}
                 {project.video && (
-                  <div className="w-full aspect-video mb-8 rounded-lg overflow-hidden border border-[var(--gold)]/20 relative group/video">
+                  <div className="w-full aspect-video mb-10 rounded-xl overflow-hidden border border-[var(--gold)]/20 relative group/video shadow-2xl">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none"></div>
                     <video 
                       src={project.video} 
                       autoPlay 
                       loop 
                       muted 
                       playsInline 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transform group-hover/video:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-black/40 group-hover/video:bg-transparent transition-colors duration-500 pointer-events-none" />
+                    <div className="absolute inset-0 bg-black/40 group-hover/video:bg-transparent transition-colors duration-500 pointer-events-none z-20" />
                   </div>
                 )}
 
                 {/* Body (Title, Desc, Button) */}
-                <div className="flex flex-col xl:flex-row xl:items-start justify-between gap-8 mb-8">
+                <div className="flex flex-col xl:flex-row xl:items-start justify-between gap-8 mb-10">
                   <div className="flex flex-col gap-4 max-w-3xl">
                     <h3 
-                      className="text-3xl md:text-4xl text-white font-bold"
+                      className="text-3xl md:text-4xl text-white font-bold group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/70 transition-all duration-300"
                       style={{ fontFamily: "'Playfair Display', serif" }}
                     >
                       {project.name}
                     </h3>
-                    <p className="text-[#888888] text-base md:text-lg leading-relaxed font-light">
+                    <p className="text-white/70 text-base md:text-lg leading-relaxed font-light">
                       {project.description}
                     </p>
                   </div>
@@ -147,9 +150,10 @@ export default function WorkSection() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center px-8 py-3.5 border border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-[#0a0a0a] transition-colors rounded tracking-wide font-semibold text-sm w-full xl:w-auto"
+                      className="inline-flex items-center justify-center px-8 py-3.5 glass border border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-[#0a0a0a] hover:shadow-[0_0_20px_rgba(201,168,76,0.4)] transition-all duration-300 rounded-full tracking-widest uppercase font-semibold text-xs md:text-sm w-full xl:w-auto group/btn"
                     >
-                      View Live Site &rarr;
+                      View Live Site 
+                      <span className="ml-2 group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
                     </a>
                   </div>
                 </div>
@@ -159,7 +163,7 @@ export default function WorkSection() {
                   {project.tags.map((tag) => (
                     <span 
                       key={tag} 
-                      className="px-4 py-2 rounded-full border border-[var(--gold)]/30 text-[#aaaaaa] text-xs font-medium uppercase tracking-wider"
+                      className="px-4 py-2 rounded-full glass border border-glass-border text-white/60 text-xs font-medium uppercase tracking-wider hover:text-white hover:border-[var(--gold)]/30 transition-colors"
                     >
                       {tag}
                     </span>

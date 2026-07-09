@@ -47,32 +47,37 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-8 px-5 py-1.5 rounded-full border border-[var(--gold)]/50 text-[var(--gold)] text-xs md:text-sm tracking-[0.15em] uppercase backdrop-blur-sm"
+          className="mb-8 px-5 py-2 rounded-full border border-glass-border bg-glass backdrop-blur-md text-[var(--gold)] text-xs md:text-sm tracking-[0.15em] uppercase relative overflow-hidden group"
         >
-          Howrah, West Bengal &middot; Est. 2024
+          <div className="absolute inset-0 bg-animated-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <span className="relative z-10 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[var(--gold)] animate-pulse-glow"></span>
+            Howrah, West Bengal &middot; Est. 2024
+          </span>
         </motion.div>
 
         {/* Heading */}
-        <div className="mb-6 flex flex-col items-center w-full">
+        <div className="mb-6 flex flex-col items-center w-full relative">
+          <div className="absolute -inset-10 bg-[var(--gold)]/5 rounded-full blur-3xl animate-pulse-glow -z-10"></div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-2 md:mb-4"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-2 md:mb-4 drop-shadow-2xl"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             We build restaurants
           </motion.h1>
           
-          <div className="h-[48px] md:h-[80px] lg:h-[96px] relative w-full flex justify-center">
+          <div className="h-[60px] md:h-[96px] lg:h-[112px] relative w-full flex justify-center">
             <AnimatePresence>
               <motion.h1
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -30 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="text-4xl md:text-6xl lg:text-7xl font-bold text-[var(--gold)] absolute whitespace-nowrap w-full text-center"
+                initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                exit={{ opacity: 0, y: -30, filter: 'blur(8px)' }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--gold)] via-[#e8d48b] to-[var(--gold)] absolute whitespace-nowrap w-full text-center"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {words[index]}
@@ -86,9 +91,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-[#888888] max-w-[500px] text-base md:text-lg mb-10 leading-relaxed font-light"
+          className="text-white/70 max-w-[600px] text-lg md:text-xl mb-12 leading-relaxed font-light tracking-wide backdrop-blur-sm p-4 rounded-xl"
         >
-          Professional websites for restaurants, cafes, hotels and bakeries across India &mdash; starting at &#8377;1,500.
+          Professional websites for restaurants, cafes, hotels and bakeries across India &mdash; starting at <span className="text-[var(--gold)] font-medium">&#8377;1,500</span>.
         </motion.p>
 
         {/* Buttons */}
@@ -96,19 +101,26 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto"
+          className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 w-full sm:w-auto"
         >
           <a 
             href="#work" 
-            className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-[var(--gold)] text-[#0a0a0a] font-semibold rounded hover:bg-[#b0913c] transition-colors tracking-wide text-sm md:text-base text-center"
+            className="relative group w-full sm:w-auto overflow-hidden rounded-full"
           >
-            View Our Work
+            <div className="absolute inset-0 bg-gradient-to-r from-[var(--gold)] via-[#e8d48b] to-[var(--gold)] opacity-100 group-hover:scale-105 transition-transform duration-500"></div>
+            <div className="relative px-10 py-4 text-[#0a0a0a] font-bold tracking-widest text-sm md:text-base text-center uppercase flex items-center justify-center gap-2">
+              View Our Work
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
           </a>
           <a 
             href="#pricing" 
-            className="w-full sm:w-auto px-8 py-3.5 md:py-4 border border-[var(--gold)] text-[var(--gold)] font-semibold rounded hover:bg-[var(--gold)]/10 transition-colors tracking-wide text-sm md:text-base text-center"
+            className="w-full sm:w-auto px-10 py-4 glass border border-glass-border text-white font-semibold rounded-full hover:bg-glass-hover hover:border-[var(--gold)]/50 transition-all duration-300 tracking-widest text-sm md:text-base text-center uppercase group flex items-center justify-center gap-2"
           >
-            Start at &#8377;1,500 &rarr;
+            Start Project
+            <span className="text-[var(--gold)] group-hover:translate-x-1 transition-transform">&rarr;</span>
           </a>
         </motion.div>
       </div>
