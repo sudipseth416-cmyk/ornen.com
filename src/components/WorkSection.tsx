@@ -10,7 +10,7 @@ const projects = [
     description: "A premium multi-page restaurant website in Howrah with full menu, table booking, gallery, reviews and WhatsApp integration.",
     tags: ["Multi-Page", "Booking System", "Menu", "Gallery", "Google Rating", "WhatsApp CTA"],
     link: "https://cafe-adda-psi.vercel.app/",
-    video: "/cafeadda.mp4"
+    video: "https://media.githubusercontent.com/media/sudipseth416-cmyk/ornen.com/main/public/cafeadda.mp4"
   },
   {
     number: "02",
@@ -19,7 +19,7 @@ const projects = [
     description: "A clean premium website for a pure veg restaurant in Girish Park, Kolkata with menu, location and brand showcase.",
     tags: ["Restaurant Website", "Menu Display", "Brand Design", "Mobile Responsive"],
     link: "https://oro-cafe-lounge-fcld.vercel.app/",
-    video: "/orocafe.mp4"
+    video: "https://media.githubusercontent.com/media/sudipseth416-cmyk/ornen.com/main/public/orocafe.mp4"
   },
   {
     number: "03",
@@ -28,7 +28,7 @@ const projects = [
     description: "A Bengali heritage cafe in Konnagar, Hooghly. Built with table reservation system, Swiggy and Zomato integration, menu showcase, customer reviews and Google Maps.",
     tags: ["Web Design", "Table Reservation", "Swiggy & Zomato", "Menu Display", "Mobile Responsive"],
     link: "https://cafe-coutume.vercel.app/",
-    video: "/cafecoutume.mp4"
+    video: "https://media.githubusercontent.com/media/sudipseth416-cmyk/ornen.com/main/public/cafecoutume.mp4"
   }
 ];
 
