@@ -18,7 +18,7 @@ import { CustomCursor } from "@/components/CustomCursor";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#0a0a0a] text-white overflow-hidden">
+    <main className="flex min-h-screen flex-col text-white overflow-hidden">
       <CustomCursor />
       <WhatsAppButton />
       <Navigation />

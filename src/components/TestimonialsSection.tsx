@@ -34,7 +34,7 @@ function GoldStars() {
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="w-full bg-[#0a0a0a] py-24 md:py-32">
+    <section id="testimonials" className="w-full bg-transparent py-24 md:py-32">
       <div className="container mx-auto px-6 md:px-12">
 
         {/* Section Header */}

@@ -20,7 +20,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-transparent">
       {/* Video Background */}
       <video
         autoPlay

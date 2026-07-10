@@ -37,7 +37,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="w-full bg-[#0a0a0a] py-24 md:py-32">
+    <section id="services" className="w-full bg-transparent py-24 md:py-32">
       <div className="container mx-auto px-6 md:px-12">
         
         {/* Section Header */}

@@ -28,9 +28,38 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
+  background-color: #050505;
   color: #ffffff;
   font-family: 'Inter', sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(201, 168, 76, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(201, 168, 76, 0.12), transparent 25%);
+  animation: bgOrbs 15s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+@keyframes bgOrbs {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.1) translate(-20px, 20px); }
+  100% { transform: scale(0.9) translate(20px, -20px); }
 }
 
 /* Custom gold cursor dot on desktop */

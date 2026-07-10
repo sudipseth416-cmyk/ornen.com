@@ -27,7 +27,7 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="w-full bg-[#0a0a0a] py-24 md:py-32 overflow-hidden">
+    <section id="process" className="w-full bg-transparent py-24 md:py-32 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
 
         {/* Section Header */}

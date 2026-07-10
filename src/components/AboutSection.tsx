@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="w-full bg-[#0a0a0a] py-24 md:py-32 overflow-hidden">
+    <section id="about" className="w-full bg-transparent py-24 md:py-32 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
         
         {/* Section Label */}
