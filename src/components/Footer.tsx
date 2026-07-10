@@ -70,7 +70,7 @@ export function Footer() {
                 +91 91630 09325
               </a>
               <a href="https://www.instagram.com/ornen_creature_webdeveloper?igsh=NGVuZzBrc2JhM2g5" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
-                ORNEN CREATURE WEBDEVOLOPER
+                @ornen_creature_webdevoloper
               </a>
             </div>
           </div>
