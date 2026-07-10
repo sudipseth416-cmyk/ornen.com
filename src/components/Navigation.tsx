@@ -135,10 +135,10 @@ export default function Navigation() {
                   <span className="group-hover:ml-3 transition-all duration-300">{link.label}</span>
                 </motion.a>
               ))}
-            </nav>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </nav>
   );
 }
