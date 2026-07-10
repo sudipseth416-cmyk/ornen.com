@@ -17,10 +17,10 @@ export function Footer() {
               duration: 20,
             }}
           >
-            <span className="px-4">Ornen Creature ✦ Howrah, West Bengal ✦ Restaurant Websites ✦ Cafe Websites ✦ Hotel Websites ✦ Starting ₹1,500 ✦</span>
-            <span className="px-4">Ornen Creature ✦ Howrah, West Bengal ✦ Restaurant Websites ✦ Cafe Websites ✦ Hotel Websites ✦ Starting ₹1,500 ✦</span>
-            <span className="px-4">Ornen Creature ✦ Howrah, West Bengal ✦ Restaurant Websites ✦ Cafe Websites ✦ Hotel Websites ✦ Starting ₹1,500 ✦</span>
-            <span className="px-4">Ornen Creature ✦ Howrah, West Bengal ✦ Restaurant Websites ✦ Cafe Websites ✦ Hotel Websites ✦ Starting ₹1,500 ✦</span>
+            <span className="px-4">Ornen Creature ✦ Howrah, West Bengal ✦ Restaurant Websites ✦ Cafe Websites ✦ Hotel Websites ✦ Starting ₹1,599 ✦</span>
+            <span className="px-4">Ornen Creature ✦ Howrah, West Bengal ✦ Restaurant Websites ✦ Cafe Websites ✦ Hotel Websites ✦ Starting ₹1,599 ✦</span>
+            <span className="px-4">Ornen Creature ✦ Howrah, West Bengal ✦ Restaurant Websites ✦ Cafe Websites ✦ Hotel Websites ✦ Starting ₹1,599 ✦</span>
+            <span className="px-4">Ornen Creature ✦ Howrah, West Bengal ✦ Restaurant Websites ✦ Cafe Websites ✦ Hotel Websites ✦ Starting ₹1,599 ✦</span>
           </motion.div>
         </div>
       </div>
@@ -82,7 +82,7 @@ export function Footer() {
       <div className="border-t border-[#c9a84c]/30">
         <div className="container mx-auto px-6 py-6 text-center">
           <p className="text-gray-500 text-sm tracking-wide">
-            © 2025 Ornen Creature. Designed and built in Howrah, West Bengal, India.
+            © 2026 Ornen Creature. Designed and built in Howrah, West Bengal, India.
           </p>
         </div>
       </div>

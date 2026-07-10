@@ -55,7 +55,7 @@ export default function AboutSection() {
                 Howrah, West Bengal
               </span>
               <span className="px-5 py-2 rounded-full glass border border-glass-border text-[var(--gold)] text-xs tracking-[0.15em] uppercase hover:bg-glass-hover transition-colors">
-                Est. 2025
+                Est. 2026
               </span>
             </div>
           </motion.div>

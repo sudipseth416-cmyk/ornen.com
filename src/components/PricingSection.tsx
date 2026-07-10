@@ -6,7 +6,7 @@ const plans = [
   {
     label: "Most Affordable",
     name: "Single Page Website",
-    price: "₹1,500",
+    price: "₹1,599",
     badge: null,
     features: [
       "All content on one page",
