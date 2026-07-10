@@ -69,8 +69,8 @@ export function Footer() {
               <a href="tel:+919163009325" className="hover:text-white transition-colors duration-300">
                 +91 91630 09325
               </a>
-              <a href="https://instagram.com/ornen_creature" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
-                @ornen_creature on Instagram
+              <a href="https://www.instagram.com/ornen_creature_webdeveloper?igsh=NGVuZzBrc2JhM2g5" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
+                ORNEN CREATURE WEBDEVOLOPER
               </a>
             </div>
           </div>
