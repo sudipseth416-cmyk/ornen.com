@@ -52,7 +52,7 @@ export default function HeroSection() {
           <div className="absolute inset-0 bg-animated-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <span className="relative z-10 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[var(--gold)] animate-pulse-glow"></span>
-            Howrah, West Bengal &middot; Est. 2024
+            Howrah, West Bengal &middot; Est. 2025
           </span>
         </motion.div>
 
