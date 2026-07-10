@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 const projects = [
   {
@@ -33,8 +34,21 @@ const projects = [
 ];
 
 export default function WorkSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (sectionRef.current) {
+      const videos = sectionRef.current.querySelectorAll('video');
+      videos.forEach(video => {
+        video.defaultMuted = true;
+        video.muted = true;
+        video.play().catch(e => console.error("Work video autoplay prevented:", e));
+      });
+    }
+  }, []);
+
   return (
-    <section id="work" className="w-full bg-transparent py-24 md:py-32">
+    <section id="work" ref={sectionRef} className="w-full bg-transparent py-24 md:py-32">
       <div className="container mx-auto px-6 md:px-12">
         
         {/* Section Header */}

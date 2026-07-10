@@ -66,8 +66,8 @@ export function Footer() {
               <a href="mailto:ornencreature8725@gmail.com" className="hover:text-white transition-colors duration-300">
                 ornencreature8725@gmail.com
               </a>
-              <a href="tel:+919330019587" className="hover:text-white transition-colors duration-300">
-                +91 93300 19587
+              <a href="tel:+919163009325" className="hover:text-white transition-colors duration-300">
+                +91 91630 09325
               </a>
               <a href="https://instagram.com/ornen_creature" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
                 @ornen_creature on Instagram

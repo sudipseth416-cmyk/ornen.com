@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const words = [
@@ -11,6 +11,7 @@ const words = [
 
 export default function HeroSection() {
   const [index, setIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,10 +20,21 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(error => {
+        console.error("Video autoplay prevented:", error);
+      });
+    }
+  }, []);
+
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-transparent">
       {/* Video Background */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
@@ -63,7 +75,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-2 md:mb-4 drop-shadow-2xl"
+            className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-bold text-white mb-2 md:mb-4 drop-shadow-2xl"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             We build restaurants
@@ -77,7 +89,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 exit={{ opacity: 0, y: -30, filter: 'blur(8px)' }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--gold)] via-[#e8d48b] to-[var(--gold)] absolute whitespace-nowrap w-full text-center"
+                className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--gold)] via-[#e8d48b] to-[var(--gold)] absolute w-full text-center"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {words[index]}

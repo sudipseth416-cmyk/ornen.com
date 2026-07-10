@@ -30,7 +30,7 @@ export function Contact() {
           className="flex flex-col items-center gap-6"
         >
           <a
-            href="https://wa.me/919330019587"
+            href="https://wa.me/919163009325"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full md:w-auto inline-block bg-[#c9a84c] text-black font-bold text-lg py-4 px-10 rounded-full hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(201,168,76,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]"

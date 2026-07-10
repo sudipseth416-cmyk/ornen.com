@@ -150,7 +150,7 @@ export default function PricingSection() {
 
                 {/* CTA Button */}
                 <a
-                  href="https://wa.me/919330019587"
+                  href="https://wa.me/919163009325"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full py-4 rounded-full font-bold text-sm tracking-widest uppercase text-center transition-all duration-500 block relative overflow-hidden ${
