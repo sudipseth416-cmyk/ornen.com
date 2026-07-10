@@ -37,7 +37,7 @@ export default function StatsBar() {
   const stats = [
     { num: 10, suffix: '+', label: 'Happy Clients' },
     { num: 3, label: 'Live Projects' },
-    { num: 1500, prefix: '₹', formatComma: true, label: 'Starting Price' },
+    { num: 1599, prefix: '₹', formatComma: true, label: 'Starting Price' },
     { num: 24, suffix: '/7', label: 'Online Presence' },
   ];
 

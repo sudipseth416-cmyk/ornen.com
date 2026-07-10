@@ -26,6 +26,7 @@ const plans = [
     badge: "POPULAR",
     features: [
       "Everything in Single Page plus:",
+      "QR code ordering system",
       "Digital menu listings",
       "Customer reviews section",
       "Zomato and Swiggy integration",
@@ -150,7 +151,7 @@ export default function PricingSection() {
 
                 {/* CTA Button */}
                 <a
-                  href="https://wa.me/919163009325"
+                  href="https://wa.me/919163009325?text=Hi,%20I%20am%20interested%20in%20building%20a%20website%20with%20Ornen%20Creature.%20Please%20provide%20more%20details."
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full py-4 rounded-full font-bold text-sm tracking-widest uppercase text-center transition-all duration-500 block relative overflow-hidden ${
@@ -177,7 +178,7 @@ export default function PricingSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-center text-[#555555] text-xs md:text-sm font-light mt-12 max-w-xl mx-auto leading-relaxed"
         >
-          Domain not included. Custom domain ₹1,000 first year &middot; Annual renewal ₹800 per year. Additional features available at extra cost.
+          Domain not included. Custom domain .in for ₹800 and .com for ₹1,000 first time &middot; Annual renewal ₹800 for both per year. Additional features available at extra cost.
         </motion.p>
 
       </div>

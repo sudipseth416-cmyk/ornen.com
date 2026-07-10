@@ -79,7 +79,7 @@ export function WhatsAppButton() {
         className="rounded-full"
       >
         <a
-          href="https://wa.me/919163009325"
+          href="https://wa.me/919163009325?text=Hi,%20I%20am%20interested%20in%20building%20a%20website%20with%20Ornen%20Creature.%20Please%20provide%20more%20details."
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300"

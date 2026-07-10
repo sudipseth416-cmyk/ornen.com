@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     question: "Is domain included in the package?",
-    answer: "Domain is not included in either package. \nA custom domain such as .com or .in costs ₹1,000 \nfor the first year and ₹800 for annual renewal."
+    answer: "Domain is not included in either package. \nA custom domain such as .in costs ₹800 and .com costs ₹1,000 \nfor the first time, and yearly ₹800 for both for annual renewal."
   },
   {
     question: "How long does it take to build?",
